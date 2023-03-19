@@ -20,15 +20,17 @@ The important backup is T-1. The remainders are to remediate against undetected 
 We might wish to have a copy of the uncorrupted record from more than 12 months ago. 
 
 Possibly we could do well with a Fibonacci sequence: 
+```
 T-1, T-2, T-3, T-5, T-8, T-13, T-21
+```
 Just 7 datasets kept, 5 less than the naive strategy but with a coverage back to nearly twice as long.
 
 I tried to explore a model of stores, deletion and shifting, based upon an imagined set of shelves and physical snapshots. 
 I got bogged down in the code, needed a doubly linked list and ran away. 
 
-What we actually need, in the AWS world, is to be able to set the expiriy date on the snapshot dataset at the time of its creation, given only the month number from the start. 
+What we _actually_ need, in the AWS world, is to be able to set the expiriy date on the snapshot dataset at the time of its creation, given only the month number from the start. 
 
-This is actually much easier to model, especially if we go away from Fibonacci and use powers of two. 
+This is much easier to model, especially if we go away from Fibonacci and use powers of two. 
 
 ````
    if creationMonthNumber % 32  == 0 :
@@ -54,5 +56,6 @@ creation:252, age:4, expiry:4
 creation:254, age:2, expiry:2
 creation:255, age:1, expiry:2
 ````
+Only 6 data sets but an oldest set between 16 and 32 months old. 
 
 
