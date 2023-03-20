@@ -32,6 +32,11 @@ What we _actually_ need, in the AWS world, is to be able to set the expiriy date
 
 This is much easier to model, especially if we go away from Fibonacci and use powers of two. 
 
+```
+T-1, T-2, T-4, T-8, T-16, T-32
+```
+
+
 ````
    if creationMonthNumber % 32  == 0 :
         return 32
