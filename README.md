@@ -1,11 +1,9 @@
 A naive backup strategy is to keep each monthly backup for 12 months. 
 
 After 14 months we have 12 backups: 
-
+```
 T-1, T-2, T-3, T-4, T-5, T-6, T-7, T-8, T-9. T-10, T-11, T-12
-
-
-A quick skim of https://en.wikipedia.org/wiki/Backup_rotation_scheme does not really help. 
+```
 
 When thinking of backup lets try to enumerate the failure modes and what the action would be to fix it. 
 
